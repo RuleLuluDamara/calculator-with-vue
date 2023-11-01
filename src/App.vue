@@ -1,10 +1,14 @@
 <template>
   <div>
-    <ul>
-      <li v-for="(todo, index) in todos" :key="index" :style="getBackgroundStyle(index)">
-        {{ todo.teks }}
-      </li> 
-    </ul>
+    <h1>Kalkulator Sederhana</h1>
+    <p>Hasil: {{ hasil }}</p>
+    <input v-model="angka1" type="number" placeholder="Angka pertama" />
+    <input v-model="angka2" type="number" placeholder="Angka kedua" />
+    <br /><br />
+    <button @click="add">+</button>
+    <button @click="subtract">-</button>
+    <button @click="multiply">*</button>
+    <button @click="divide">/</button>
   </div>
 </template>
 
@@ -12,22 +16,23 @@
 export default {
   data() {
     return {
-      todos: [
-        { teks: "Learn Javascript - (Belajar JavaScript dari nol)" },
-        { teks: "Learn Vue - (Belajar Vue dari nol)" },
-        { teks: "Build Something awesome - (Belajar JavaScript dari Vue dari Nol)" }
-      ],
+      angka1: 0,
+      angka2: 0,
+      hasil: 0,
     };
   },
   methods: {
-    getBackgroundStyle(index) {
-      if (index === 0 || index === 2) {
-        return {
-          backgroundColor: "red",
-          /* You can adjust other styles as needed */
-        };
-      }
-      return {}; // Return an empty object if no special style is needed
+    add() {
+      this.hasil = this.angka1 + this.angka2;
+    },
+    subtract() {
+      this.hasil = this.angka1 - this.angka2;
+    },
+    multiply() {
+      this.hasil = this.angka1 * this.angka2;
+    },
+    divide() {
+      this.hasil = this.angka1 / this.angka2;
     },
   },
 };
