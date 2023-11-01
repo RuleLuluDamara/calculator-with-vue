@@ -1,5 +1,15 @@
 # calculator-with-vue
 
+## See here
+
+github deployment : https://ruleluludamara.github.io/calculator-with-vue/
+
+
+vercel deployment : https://calculator-with-vue-jade.vercel.app/
+
+
+netifly deployment : https://main--funny-torrone-27c74a.netlify.app/
+
 ## Project setup
 ```
 npm install
@@ -22,3 +32,5 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
