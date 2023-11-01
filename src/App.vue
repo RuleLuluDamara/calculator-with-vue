@@ -1,26 +1,38 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <ul>
+      <li v-for="(todo, index) in todos" :key="index" :style="getBackgroundStyle(index)">
+        {{ todo.teks }}
+      </li> 
+    </ul>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  data() {
+    return {
+      todos: [
+        { teks: "Learn Javascript - (Belajar JavaScript dari nol)" },
+        { teks: "Learn Vue - (Belajar Vue dari nol)" },
+        { teks: "Build Something awesome - (Belajar JavaScript dari Vue dari Nol)" }
+      ],
+    };
+  },
+  methods: {
+    getBackgroundStyle(index) {
+      if (index === 0 || index === 2) {
+        return {
+          backgroundColor: "red",
+          /* You can adjust other styles as needed */
+        };
+      }
+      return {}; // Return an empty object if no special style is needed
+    },
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+/* Add scoped styles here if needed */
 </style>
